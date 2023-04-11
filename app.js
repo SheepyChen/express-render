@@ -3,18 +3,18 @@ const { createProxyMiddleware } = require("http-proxy-middleware");
 
 const app = express();
 
-// Proxy requests to https://od.moi.gov.tw/api
+// Proxy requests to the appropriate API based on the endpoint
 app.use(
-  "/api",
+  "/",
   createProxyMiddleware({
     target: "https://od.moi.gov.tw",
     changeOrigin: true,
     pathRewrite: {
-      "^/api/111": "/api/v1/rest/datastore/301000000A-000082-053",
-      "^/api/110": "/api/v1/rest/datastore/301000000A-000082-049",
-      "^/api/109": "/api/v1/rest/datastore/301000000A-000082-045",
-      "^/api/108": "/api/v1/rest/datastore/301000000A-000082-041",
-      "^/api/107": "/api/v1/rest/datastore/301000000A-000082-033",
+      "^/111": "/api/v1/rest/datastore/301000000A-000082-053",
+      "^/110": "/api/v1/rest/datastore/301000000A-000082-049",
+      "^/109": "/api/v1/rest/datastore/301000000A-000082-045",
+      "^/108": "/api/v1/rest/datastore/301000000A-000082-041",
+      "^/107": "/api/v1/rest/datastore/301000000A-000082-033",
     },
   })
 );
