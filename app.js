@@ -7,7 +7,7 @@ const app = express();
 app.use(
   "/",
   createProxyMiddleware({
-    target: "https://od.moi.gov.tw",
+    target: "https://od.moi.gov.tw/api/v1/rest/datastore/301000000A-000082-053",
     changeOrigin: true,
     pathRewrite: {
       "^/111": "/api/v1/rest/datastore/301000000A-000082-053",
@@ -23,7 +23,7 @@ app.use(
 app.use(express.static("build"));
 
 // Start the server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3100;
 app.listen(PORT, () => {
   console.log(`Server listening on port ${PORT}`);
 });
