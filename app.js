@@ -20,6 +20,14 @@ app.use(
       "^/api/v1/rest/datastore/301000000A-000082-041":
         "/api/v1/rest/datastore/301000000A-000082-041",
     },
+    headers: {
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
+      "Access-Control-Allow-Headers":
+        "X-Requested-With, Content-Type, Authorization",
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
   })
 );
 
